@@ -5,6 +5,17 @@ namespace <%= namespace %>
 {
     public class <%= fileName %> : EntityBase
     {
+      [DbField(true, IsAutoIncrement = true)]
+      public uint Id { get; private set; }
+
+      private I<%= fileName %>Manager m_<%= fileName %>Manager;
+        private I<%= fileName %>Manager <%= fileName %>Manager => m_<%= fileName %>Manager
+            ?? (m_<%= fileName %>Manager = ObjectFactory.GetInstance<I<%= fileName %>Manager>());
+
+        public <%= fileName %>(){
+            Context = context;
+        }
+
         protected override void ValidateEntity()
         {
             throw new System.NotImplementedException();

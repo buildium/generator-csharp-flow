@@ -56,7 +56,7 @@ module.exports = generators.Base.extend({
 
       this.fs.copyTpl(
         this.templatePath('entity.cs'),
-        this.destinationPath('Entities/' + containingFolderName + '/' + name + 'Manager.cs'),
+        this.destinationPath('Entities/' + containingFolderName + '/' + name + '.cs'),
           { fileName: name , namespace: this.config.get('dataAccessProjectNamespace') + '.Entities.' + containingFolderName,
             frameworkFilePath: 'Buildium.Enterprise.Framework.Entities'}
       );
