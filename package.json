@@ -9,6 +9,13 @@
   "keywords": [
     "yeoman-generator"
   ],
-  "author": "Alla Hoffman",
-  "license": "MIT"
+  "files": [
+    "entity-service-manager"
+  ],
+  "author": "Alla Hoffman <sm1th303@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^0.22.5",
+    "chalk": "^1.1.1"
+  }
 }
