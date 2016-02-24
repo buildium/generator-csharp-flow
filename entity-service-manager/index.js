@@ -42,6 +42,25 @@ module.exports = generators.Base.extend({
           { fileName: name , namespace: this.config.get('dataAccessProjectNamespace') + '.Api.Services.' + containingFolderName }
       );
 
+      this.fs.copyTpl(
+        this.templatePath('imanager.cs'),
+        this.destinationPath('Managers/' + containingFolderName + '/I' + name + 'Manager.cs'),
+          { fileName: name, namespace: this.config.get('dataAccessProjectNamespace') + '.Managers.' + containingFolderName }
+      );
+
+      this.fs.copyTpl(
+        this.templatePath('manager.cs'),
+        this.destinationPath('Managers/' + containingFolderName + '/' + name + 'Manager.cs'),
+          { fileName: name , namespace: this.config.get('dataAccessProjectNamespace') + '.Managers.' + containingFolderName }
+      );
+
+      this.fs.copyTpl(
+        this.templatePath('entity.cs'),
+        this.destinationPath('Entities/' + containingFolderName + '/' + name + 'Manager.cs'),
+          { fileName: name , namespace: this.config.get('dataAccessProjectNamespace') + '.Entities.' + containingFolderName,
+            frameworkFilePath: 'Buildium.Enterprise.Framework.Entities'}
+      );
+
       done();
     }.bind(this));
   },
