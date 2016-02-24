@@ -1,0 +1,14 @@
+{
+  "name": "generator-csharp-flow",
+  "version": "1.0.0",
+  "description": "scaffolds files for a new entity, from controller down to manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Alla Hoffman",
+  "license": "MIT"
+}
