@@ -39,6 +39,10 @@ DataProject/
   Entities\Entity\Entity.cs
 ```
 
+It's recommended to install [Yeoman.VisualStudio](https://github.com/ryansmith940/Yeoman.VisualStudio),
+and run your C# generators through the Package Manager console 
+if you want files to be automatically added to your .csproj files.
+
 #Options
 
 When creating your entity and associated service, manager, and interfaces, you will be given an option to create
