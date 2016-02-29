@@ -40,7 +40,7 @@ DataProject/
 ```
 
 It's recommended to install [Yeoman.VisualStudio](https://github.com/ryansmith940/Yeoman.VisualStudio),
-and run your C# generators through the Package Manager console 
+and run your C# generators through the Package Manager console with the correct default project
 if you want files to be automatically added to your .csproj files.
 
 #Options
