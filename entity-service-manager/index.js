@@ -4,7 +4,7 @@ var chalk = require('chalk');
 var prompts = [{
       type    : 'input',
       name    : 'existingFolderName',
-      message : 'Would you like to create these files in existing domain folders? If so, enter the folder name.',
+      message : 'Would you like to create these files in existing an domain folder (eg. ''Properties'')? If so, enter the folder name.',
       default : 'none'
     }];
 
