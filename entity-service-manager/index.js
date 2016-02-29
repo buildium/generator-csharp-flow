@@ -30,35 +30,40 @@ module.exports = generators.Base.extend({
         containingFolderName = answers.existingFolderName;
       }
 
+      var servicesNamespace = this.config.get('dataAccessProjectNamespace') + '.Api.Services.' + containingFolderName;
+      var managersNamespace = this.config.get('dataAccessProjectNamespace') + '.Managers.' + containingFolderName;
+      var entitiesNamespace = this.config.get('dataAccessProjectNamespace') + '.Entities.' + containingFolderName;
+      var entitiesDependency = 'Buildium.Enterprise.Framework.Entities';
+
       this.fs.copyTpl(
         this.templatePath('iservice.cs'),
         this.destinationPath('Api/Services/' + containingFolderName + '/I' + name + 'Service.cs'),
-          { fileName: name, namespace: this.config.get('dataAccessProjectNamespace') + '.Api.Services.' + containingFolderName }
+          { fileName: name, namespace: servicesNamespace }
       );
 
       this.fs.copyTpl(
         this.templatePath('service.cs'),
         this.destinationPath('Api/Services/' + containingFolderName + '/' + name + 'Service.cs'),
-          { fileName: name , namespace: this.config.get('dataAccessProjectNamespace') + '.Api.Services.' + containingFolderName }
+          { fileName: name , namespace: servicesNamespace }
       );
 
       this.fs.copyTpl(
         this.templatePath('imanager.cs'),
         this.destinationPath('Managers/' + containingFolderName + '/I' + name + 'Manager.cs'),
-          { fileName: name, namespace: this.config.get('dataAccessProjectNamespace') + '.Managers.' + containingFolderName }
+          { fileName: name, namespace: managersNamespace }
       );
 
       this.fs.copyTpl(
         this.templatePath('manager.cs'),
         this.destinationPath('Managers/' + containingFolderName + '/' + name + 'Manager.cs'),
-          { fileName: name , namespace: this.config.get('dataAccessProjectNamespace') + '.Managers.' + containingFolderName }
+          { fileName: name, namespace: managersNamespace }
       );
 
       this.fs.copyTpl(
         this.templatePath('entity.cs'),
         this.destinationPath('Entities/' + containingFolderName + '/' + name + '.cs'),
-          { fileName: name , namespace: this.config.get('dataAccessProjectNamespace') + '.Entities.' + containingFolderName,
-            frameworkFilePath: 'Buildium.Enterprise.Framework.Entities'}
+          { fileName: name , namespace: entitiesNamespace,
+            dependencyFilePath: entitiesDependency }
       );
 
       done();

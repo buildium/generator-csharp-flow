@@ -1,5 +1,5 @@
 using System.Data;
-using <%= frameworkFilePath %>;
+using <%= dependencyFilePath %>;
 
 namespace <%= namespace %>
 {
@@ -12,8 +12,9 @@ namespace <%= namespace %>
         private I<%= fileName %>Manager <%= fileName %>Manager => m_<%= fileName %>Manager
             ?? (m_<%= fileName %>Manager = ObjectFactory.GetInstance<I<%= fileName %>Manager>());
 
-        public <%= fileName %>(){
-            Context = context;
+        public <%= fileName %>()
+        {
+
         }
 
         protected override void ValidateEntity()
