@@ -14,10 +14,23 @@ module.exports = generators.Base.extend({
     generators.Base.apply(this, arguments);
     this.argument('entityname', { type: String, required: true });
   },
-  config: function() {
-    if(!this.config.get('dataAccessProjectNamespace')) {
-      this.config.set('dataAccessProjectNamespace', "Buildium.Enterprise.Data");
-    }
+  checkProjectConfig: function() {
+    var dataAccessProjectNamespace = this.config.get('dataAccessProjectNamespace');
+        var done = this.async();
+
+        if(typeof dataAccessProjectNamespace === 'undefined') {
+            this.prompt({
+              type    : 'input',
+              name    : 'dataAccessProjectNamespace',
+              message : 'Looks like you do not have your config file set up! What is the namespace for your data access project?'
+            }, function dataAccessProjectNamespaceAnswer(answers) {
+                this.config.set('dataAccessProjectNamespace', answers.dataAccessProjectNamespace);
+                done();
+            }.bind(this));
+          }
+          else {
+            done();
+          }
   },
   createFiles: function() {
     var done = this.async();
