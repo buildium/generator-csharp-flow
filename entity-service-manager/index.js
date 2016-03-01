@@ -28,7 +28,9 @@ module.exports = generators.Base.extend({
                 done();
             }.bind(this));
           }
-          done();
+          else {
+            done();
+          }
   },
   createFiles: function() {
     var done = this.async();
