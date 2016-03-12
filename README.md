@@ -10,28 +10,22 @@ Install Yeoman
 npm install -g yo
 ```
 
-Install the generator
-
-```
-npm install -g generator-csharp-flow
-```
-
 Install this generator via npm:
 
 ```
-npm install --global generator-csharp-flow
+npm install --g generator-csharp-flow
 ```
 
 Run the entity, service, and manager sub generator using:
 
 ```
-yo generator-csharp-flow:entity-service-manager entity-name
+yo csharp-flow:entity-service-manager entity-name
 ```
 
 Using the argument as a name, this command will createboilerplate files for your component:
 
 ```
-DataProject/
+DataProject\
   Api\Services\Entity\IEntityService.cs
   Api\Services\Entity\EntityService.cs
   Managers\Entity\IEntityManager.cs
