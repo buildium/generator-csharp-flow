@@ -1,0 +1,10 @@
+productName: Buildium
+azureProjectUrl: Buildium Jira
+repoOwner: https://github.com/orgs/buildium/teams/hydrogen
+productionReleasePipelines:
+  - Buildium TeamCity
+productionBranches:
+  - master
+complianceType:
+  - None
+archived: false
